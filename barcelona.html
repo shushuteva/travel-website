@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barcelona</title>
+    <link rel="stylesheet" href="style-page.css"/>
+</head>
+
+
+<body>
+    <section>
+        <div class="container flex">
+            <div class="left">
+                <div class="main-image">
+                    <img src="./images/barcelona.jpg" alt="Image of Venice" class="slide"/>
+                </div>
+                <div class="option flex">
+                    <img src="./images/barcelona.jpg" onclick="img('images/barcelona.jpg')"/>
+                    <img src="./images/barcelona1.jpg" onclick="img('images/barcelona1.jpg')"/>
+                    <img src="./images/bercelona2.jpg"  onclick="img('images/bercelona2.jpg')"/>
+                    <img src="./images/barcelona3.jpg"  onclick="img('images/barcelona3.jpg')"/>
+                    <img src="./images/barcelona4.jpg"  onclick="img('images/barcelona4.jpg')"/>
+                    <img src="./images/barcelona5.jpg"  onclick="img('images/barcelona5.jpg')"/>
+                   
+                </div>
+            </div>
+            <div class="right">
+                <h3 id="destination">Barcelona Excursion</h3>
+                <h4><small>$</small>2000.00</h4>
+                <p> 
+                    <ul>
+                        <li> <strong>Day 1:</strong>Start the exploration by wandering through the Gothic Quarter.</li>
+                        <li> <strong>Day 2:</strong>Begin your day with a visit to the iconic Sagrada Família, Antoni Gaudí's masterpiece.</li>
+                        <li> <strong>Day 3:</strong>Take a cable car or funicular up to Montjuïc Hill.</li>
+                        <li> <strong>Day 4:</strong>Take a day trip to Montserrat, a stunning mountain range.</li>
+                        <li> <strong>Day 5:</strong>Go shopping along Passeig de Gràcia.</li>
+                    </ul>
+                </p>
+
+                <h5>Number of people:</h5>
+                <div class="add flex1">
+                    <span class="minus">-</span>
+                    <label class="num">1</label>
+                    <span class="plus">+</span>
+               </div>
+
+               <button type="submit" class="btn " onclick="openPopup()">Book Trip</button>
+               
+               <div class="popup" id="popup">
+                   <img src="./images/tick.png" alt="tick"/>
+                   <h2>Register</h2>
+
+                     <div class="input-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                      </div>
+                      <div class="input-group">
+                      <label for="email">Email:</label>
+                      <input type="email" id="email" name="email" required>
+                   </div>
+                  <div class="input-group">
+                      <label for="password">Password:</label>
+                      <input type="password" id="password" name="password" required>
+                  </div>
+                    <button type="button" id="mySubmit" onclick="submitForm()">SUBMIT</button>
+
+                </div>
+            </div>
+                   
+                    <div class="success-message" id="successMessage">
+                      <h2 id="success-booking">Successful Booking!</h2>
+                      <p>Prepare for unforgettable memories!</p>
+                      <div class="success-icon"><img src="./images/logo.png" alt="logo" height="100px" width="100px"/></div> 
+                    </div>
+
+                
+            
+               
+        </div>
+
+    </section>
+
+    <script>
+        function img(anything){
+            document.querySelector('.slide').src = anything;
+        }
+
+
+        const plus = document.querySelector(".plus"),
+              minus = document.querySelector(".minus"),
+              num = document.querySelector(".num");
+
+              let a = 1;
+              plus.addEventListener("click", ()=>{
+                a++;
+
+                num.innerText = a;
+                console.log(a);
+              });
+
+              minus.addEventListener("click", ()=>{
+                if(a>1)
+                {
+                    a--;
+                    num.innerText = a;
+                }
+
+              })
+
+          let popup = document.getElementById("popup");
+          function openPopup(){
+            popup.classList.add("open-popup");
+          }
+
+    
+
+    function submitForm() {
+        document.getElementById('popup').style.display = 'none';
+        
+        document.getElementById('successMessage').style.display = 'block';
+
+        let username = document.getElementById("name").value;
+        document.getElementById("success-booking").textContent = `${username} you booked the trip!`;
+    }
+
+
+    </script>
+    
+</body>
+</html>

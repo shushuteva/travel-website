@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <link rel="stylesheet" href="./review.css"/>
+</head>
+<body>
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="title">What Travelers Say</h1>
+            </div>
+                <div class="add-review">
+                    <h2>Add Your Review</h2>
+                    <form id="reviewForm">
+                        <input type="text" id="name" placeholder="Your Name" required>
+                        <textarea id="reviewText" placeholder="Your Review" required></textarea>
+                        <button type="submit">Submit Review</button>
+                    </form>
+                </div>
+            
+            <div class="testimonials-content">
+                    <div class="testimonials-item">
+                        <div class="info">
+                            <img src="./images/girl.png" alt="image"/>
+                            <div class="text-box">
+                                <h3 class="name">Emily Rivera</h3>
+                            </div>
+                            <p>"This was one of the best travel experiences I've ever had! From the beginning, the booking process was seamless and easy.
+                                I can't wait to plan my next adventure with them!"
+                            </p>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i> 
+                                <i class="fa fa-star"></i> 
+                                <i class="fa fa-star"></i> 
+                                <i class="fa fa-star"></i>  
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonials-item">
+                        <div class="info">
+                            <img src="./images/man.png" alt="image"/>
+                            <div class="text-box">
+                                <h3 class="name">Michael Johnson</h3>
+                            </div>
+                            <p>"I'm so glad we chose to book our family vacation through this website!
+                                Highly recommend for any family looking to create unforgettable memories!"</p>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i> 
+                                <i class="fa fa-star"></i> 
+                                <i class="fa fa-star"></i> 
+                                <i class="fa fa-star"></i>  
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.getElementById('reviewForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+    
+            var name = document.getElementById('name').value;
+            var reviewText = document.getElementById('reviewText').value;
+    
+            var newTestimonial = document.createElement('div');
+            newTestimonial.classList.add('testimonials-item');
+            newTestimonial.innerHTML = `
+                <div class="info">
+                    <img src="./images/girl1.png" alt="image"/>
+                    <div class="text-box">
+                        <h3 class="name">${name}</h3>
+                    </div>
+                    <p>${reviewText}</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+            `;
+    
+            var testimonialsContent = document.querySelector('.testimonials-content');
+            testimonialsContent.insertBefore(newTestimonial, testimonialsContent.firstChild);
+    
+            document.getElementById('name').value = '';
+            document.getElementById('reviewText').value = '';
+        });
+    </script>
+    
+</body>
+</html>

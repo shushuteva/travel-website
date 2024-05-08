@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+Mono:wght@100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #EADBC8;
+}
+
+.about-section{
+    background: url(./images/aboutUs.jpg) no-repeat left;
+    background-size: 55%;
+    background-color: #EADBC8;
+    overflow: hidden;
+    padding: 100px 0;
+    margin-left: 20px;
+}
+
+.inner-container{
+    width: 55%;
+    float: right;
+    background-color: #FEFAF6;
+    padding: 70px;
+    margin-right: 20px;
+}
+
+.inner-container h1{
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+    color: #0E2954;
+}
+
+.socials{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.text{
+    font-size: 20px;
+    color: #0E2954;
+    line-height: 25px;
+    text-align: justify;
+}
+
+@media screen and (max-width:1200px) {
+    .inner-container{
+        padding: 80px;
+    }
+}
+@media screen and (max-width:1000px) {
+    .about-section{
+        background-size: 100%;
+        padding: 100px 40;
+    }
+    .inner-container{
+        width: 100%;
+    }
+}
+@media screen and (max-width:600px) {
+    .about-section{
+        padding: 0;
+    }
+    .inner-container{
+        padding: 60px;
+    }
+}

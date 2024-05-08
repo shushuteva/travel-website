@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rila</title>
+    <link rel="stylesheet" href="style-lakes.css"/>
+</head>
+
+
+<body>
+    <section>
+        <div class="container flex">
+            <div class="left">
+                <div class="main-image">
+                    <img src="./images/rila1.jpg" alt="Image of Venice" class="slide"/>
+                </div>
+                <div class="option flex">
+                    <img src="./images/rila1.jpg" onclick="img('images/rila1.jpg')"/>
+                    <img src="./images/rila2.jpg" onclick="img('images/rila2.jpg')"/>
+                    <img src="./images/rila3.jpg"  onclick="img('images/rila3.jpg')"/>
+                    <img src="./images/rila4.jpg"  onclick="img('images/rila4.jpg')"/>
+                    <img src="./images/rila5.jpg"  onclick="img('images/rila5.jpg')"/>
+                    <img src="./images/rila6.jpg"  onclick="img('images/rila6.jpg')"/>
+                   
+                </div>
+            </div>
+            <div class="right">
+                <h3>Seven Rila Lakes Hiking</h3>
+                <h4><small>$</small>1000.00</h4>
+                <p> 
+                    <ul>
+                        <li> <strong>6:00 AM - Departure from Sofia: </strong>Organized transport from Sofia to the Rila Mountains.</li>
+                        <li> <strong>8:30 AM - Arrival: </strong>Taking the chairlift to the Rila Lakes mountain hut.</li>
+                        <li> <strong>9:00 AM - Start Hiking: </strong>Enjoy the scenery and capture photos.</li>
+                        <li> <strong>12:30 PM - Lunch: </strong>Enjoy your packed lunch with a view.</li>
+                        <li> <strong>5:30 PM - Departure to Sofia: </strong>Begin the journey back to Sofia.</li>
+                    </ul>
+                </p>
+
+                <h5>Number of people:</h5>
+                <div class="add flex1">
+                    <span class="minus">-</span>
+                    <label class="num">1</label>
+                    <span class="plus">+</span>
+               </div>
+
+               <button type="submit" class="btn " onclick="openPopup()">Book Trip</button>
+               
+               <div class="popup" id="popup">
+                   <img src="./images/tick.png" alt="tick"/>
+                   <h2>Register</h2>
+
+                     <div class="input-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                      </div>
+                      <div class="input-group">
+                      <label for="email">Email:</label>
+                      <input type="email" id="email" name="email" required>
+                   </div>
+                  <div class="input-group">
+                      <label for="password">Password:</label>
+                      <input type="password" id="password" name="password" required>
+                  </div>
+                    <button type="button" onclick="submitForm()">SUBMIT</button>
+
+                </div>
+            </div>
+                   
+                    <div class="success-message" id="successMessage">
+                    
+                      <h2 id="success-booking">Successful Booking!</h2>
+                      <p>Prepare for unforgettable memories</p>
+                      <div class="success-icon"><img src="./images/logo.png" alt="logo" height="100px" width="100px"/></div> 
+                    </div>
+
+                
+            
+               
+        </div>
+
+    </section>
+
+    <script>
+        function img(anything){
+            document.querySelector('.slide').src = anything;
+        }
+
+
+        const plus = document.querySelector(".plus"),
+              minus = document.querySelector(".minus"),
+              num = document.querySelector(".num");
+
+              let a = 1;
+              plus.addEventListener("click", ()=>{
+                a++;
+
+                num.innerText = a;
+                console.log(a);
+              });
+
+              minus.addEventListener("click", ()=>{
+                if(a>1)
+                {
+                    a--;
+                    num.innerText = a;
+                }
+
+              })
+
+          let popup = document.getElementById("popup");
+          function openPopup(){
+            popup.classList.add("open-popup");
+          }
+          
+          
+    
+
+    function submitForm() {
+        document.getElementById('popup').style.display = 'none';
+        
+        document.getElementById('successMessage').style.display = 'block';
+
+        let username = document.getElementById("name").value;
+        document.getElementById("success-booking").textContent = `${username} you booked the trip!`;
+    }
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bella Escursioni</title>
+
+    <link rel="stylesheet" href="./style.css"/>
+
+</head>
+<body>
+    <nav class="navbar">
+        <h3 class="logo">BELLA ESCURSIONI</h3>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#events">Tours</a></li>
+            <li><a href="./review.html">Reviews</a></li>
+            <li><a href="./aboutUs.html">About</a></li>
+            <li class="ctn"><a class="press" href="./contact.html">Contact</a></li>
+
+        </ul>
+
+        <img src="./images/menu.png" alt="menu button" class="menu-btn">
+
+    </nav>
+    
+
+    <header>
+        <div class="header-content">
+            <h1>EXPLORE THE WORLD</h1>
+            <div class="line"></div>
+            <h2>A journey of a thousand miles begins with a single click</h2>
+            
+
+        </div>
+
+    </header>
+
+    <!--Events-->
+    <section class="events" id="events">
+        <div class="title">
+            <h2>Choose your next destination</h2>
+            <div class="line"></div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img src="./images/venice.jpg" alt="image of Venice" />
+                <h4>Venice City Tour</h4>
+                <p>Let the magic of Venice captivate your heart, guiding you through an adventure steeped in beauty and history. A visit to Venice is not just a trip but a profound journey into the heart of human creativity and resilience. </p>
+                <a href="./venice.html" class="ctn">Learn More</a>
+            </div>
+            <div class="col">
+                <img src="./images/barcelona.jpg" alt="image of Barcelona" />
+                <h4>Barcelona City Tour</h4>
+                <p>Barcelona is not just a destination; it’s an experience. It’s a city that embraces you, challenges you, and changes you. So, why not let Barcelona into your heart and see where its vibrant streets, stunning art, and lively culture will take you? </p>
+                <a href="./barcelona.html" class="ctn">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="explore">
+        <div class="explore-content">
+        <h2>HIKING & ADVENTURE TOUR</h2>
+        <div class="line"></div>
+        <p>Crave fresh air and epic views? Hiking adventures offer stunning nature, challenges, and memories that will leave you breathless.  Join the journey, not just the destination!</p>
+        <a href="seven-rila-lakes.html" class="ctn">Learn More</a>
+        </div>
+    </section>
+
+    <section class="tours">
+        <div class="row">
+            <div class="col content-col">
+                <h2>Beach Vacation</h2>
+                <div class="line"></div>
+                <p>Sun-kissed skin, toes in the sand - trade your stress for seashells and endless sea views on a beach getaway!  It's the perfect opportunity to unwind, recharge, and create lasting memories in a beautiful coastal paradise.</p>
+                <a href="./beach.html" class="ctn">Learn More</a>
+            </div>
+            <div class="col image-col">
+                <div class="image-gallery">
+                    <img src="./images/sea.jpg"/>
+                    <img src="./images/sea2.jpg"/>
+                    <img src="./images/sea3.jpg"/>
+                    <img src="./images/sea4.jpg"/>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="footer">
+        <p>Adress: Sofia | Phone: 0123456789 | Email: contact@example.com</p>
+        <p>Copyright &copy; 2024 Explore The World</p>
+    </section>
+    
+    <script>
+        const menuBtn = document.querySelector('.menu-btn')
+        const navlinks = document.querySelector('.nav-links')
+
+        menuBtn.addEventListener("click",()=>{
+            navlinks.classList.toggle('mobile-menu')
+
+        })
+    </script>
+</body>
+</html>
